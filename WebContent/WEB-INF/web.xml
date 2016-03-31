@@ -17,7 +17,6 @@
     <param-name>org.apache.myfaces.NUMBER_OF_VIEWS_IN_SESSION</param-name>
     <param-value>50</param-value>
   </context-param>
-    <!-- Special Debug Output for Development -->
   <context-param>
     <param-name>facelets.DEVELOPMENT</param-name>
     <param-value>true</param-value>
