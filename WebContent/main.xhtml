@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:p="http://primefaces.org/ui"
+>  
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Vídeos sobre Java</title>
+
+</h:head>
+<h:body>
+<h1>Vídeos sobre Java</h1>
+<h:form>
+  	<p:commandButton value="Lista de Inscritos" ajax="false" action="inscritos.xhtml"></p:commandButton>
+
+    <p:growl id="msgs" showDetail="true" />
+  
+  
+    <p:panel id="video1" header="Java" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/PoJT8-c1YWM" frameborder="0"></iframe>
+            <h:outputText
+                value="Palestra sobre Java 8 para WEB" />
+        </h:panelGrid>
+    </p:panel>
+ 
+
+    <p:panel id="video2" header="Java" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/SZWzniAoEvw" frameborder="0"></iframe>
+            <h:outputText
+                value="7Masters - Encontro iMasters de Especialistas em Java - Palestra de Luca Bastos" />
+        </h:panelGrid>
+    </p:panel>
+    
+    
+        <p:panel id="video3" header="Java" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/NGxhi_XGA5I" frameborder="0"></iframe>
+            <h:outputText
+                value="PROFISSÃO JAVA: A PROFISSÃO DO FUTURO!" />
+        </h:panelGrid>
+    </p:panel>
+
+</h:form>	
+</h:body>
+</html>

@@ -8,6 +8,41 @@
 >  
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<<<<<<< HEAD
+<title>Java In Rio</title>
+
+<style type="text/css">
+	body{
+		font-size: 10px;
+	}
+</style>
+</h:head>
+<h:body>
+
+<h:form id="participantesForm" > 
+<p:commandButton value="Participantes" ajax="false" action="participantes.xhtml"></p:commandButton>
+<p:commandButton value="Programação" ajax="false"   action="programacao.xhtml"></p:commandButton>
+</h:form>
+
+
+<h:form id="usuarioForm" > 
+
+
+   <p:growl id="messages"/>
+	<p:panel header="Identifica&ccedil;&atilde;o" style="width:470px;margin:10% 25% 10% 25%;" >
+		<h:panelGrid columns="3" >
+			<h:outputLabel for="login" value="Login" />
+			<p:inputText id="login" required="true" value="#{acessoMB.login.usuario}" label="Login">
+			</p:inputText>
+				<p:message for="login" />
+			
+			<h:outputLabel for="senha" value="Senha" />
+			<p:password id="senha" value="#{acessoMB.login.senha}" required="true" label="Senha">
+			</p:password>
+				<p:message for="senha"/>
+			
+			<h:commandButton  value="Entrar" action="#{acessoMB.efetuarLogin}"  />
+=======
 <title>Insert title here</title>
 
 <style type="text/css">
@@ -41,6 +76,7 @@
 				<p:message for="senha"/>
 			
 			<h:commandButton  value="Entrar" action="#{usuarioBean.efetuarLogin}"  />
+>>>>>>> branch 'master' of https://github.com/cirilojunior/infnet_javainrio.git
 		</h:panelGrid>
 	</p:panel>
 
