@@ -8,6 +8,7 @@
 >  
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
 <title>Java In Rio</title>
 
 <style type="text/css">
@@ -21,9 +22,18 @@
 
 <h1>Java In Rio</h1>
 
+<h2>
+5 dias de mini-cursos, palestras e muita informação com os desenvolvedores mais importantes da
+atualidade.
+
+R$ 190,00 por dia.
+
+</h2>
+
+<br></br>
 
 <h:form id="participantesForm" > 
-<p:commandButton value="Participantes" ajax="false" action="pages/palestrantes/palestrantes.xhtml"></p:commandButton>
+<p:commandButton value="Palestrantes" ajax="false" action="pages/palestrantes/palestrantes.xhtml"></p:commandButton>
 <p:commandButton value="Programação" ajax="false"   action="pages/programacao/programacao.xhtml"></p:commandButton>
 </h:form>
 
@@ -32,7 +42,7 @@
 
 
    <p:growl id="messages"/>
-	<p:panel header="Identifica&ccedil;&atilde;o" style="width:470px;margin:10% 25% 10% 25%;" >
+	<p:panel header="Identifica&ccedil;&atilde;o" style="width:220px;margin:2% 15% 0% 0%;" >
 		<h:panelGrid columns="3" >
 			<h:outputLabel for="login" value="Login" />
 			<p:inputText id="login" required="true" value="#{acessoMB.login.usuario}" label="Login">
