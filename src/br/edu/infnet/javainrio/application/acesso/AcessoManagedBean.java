@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean
+@ManagedBean(name = "acessoMB")
 @SessionScoped
 public class AcessoManagedBean implements Serializable {
 
@@ -16,6 +16,14 @@ public class AcessoManagedBean implements Serializable {
 		this.login = new LoginDTO();
 	}
 
+	public String efetuarLogin(){
+		if(login.getUsuario().equals("admin") && login.getSenha().equals("admin")){
+			return "main";
+		}
+		
+		return "index";
+	}
+	
 	public LoginDTO getLogin() {
 		return login;
 	}
