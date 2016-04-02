@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:p="http://primefaces.org/ui"
+>  
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Palestrantes</title>
+
+</h:head>
+<h:body>
+<h1>Palestrantes:</h1>
+<h:form>
+    <p:growl id="msgs" showDetail="true" />
+ 
+    <p:panel id="jamesgosling" header="James Gosling" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <p:graphicImage url="img/James-Gosling-150.png" />
+            <h:outputText
+                value="James Gosling é geralmente creditado como o inventor da linguagem de programação Java, em 1994. Ele criou o projeto original do Java e implementou o seu compilador e máquina virtual originais. Por essa conquista, ele foi eleito para a Academia Nacional  de Engenharia dos Estados Unidos." />
+        </h:panelGrid>
+    </p:panel>
+ 
+    <p:panel id="gavinking" header="Gavin King" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <p:graphicImage url="img/gravin-king-150.png" />
+            <h:outputText
+                value="Gavin King é o fundador do projeto Hibernate, uma popular solução de persistência objeto/relacional para Java, e criador do Seam, um framework para aplicações para Java EE 5. Além disso, ele contribuiu fortemente para o projeto de EJB 3.0 e JPA." />
+        </h:panelGrid>
+    </p:panel>
+ 
+    <p:panel id="rodjohnson" header="Rod Johnson" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <p:graphicImage url="img/Rod-Johnson-150.png" />
+            <h:outputText
+                value="Rod Johnson é o criador do Spring Framework, um framework para aplicações de código aberto para Java, e CEO da SpringSource. Além disso, seu best-seller Expert One-on-One J2EE Design and Development (2002) foi um dos mais influentes livros já publicados em J2EE." />
+        </h:panelGrid>
+    </p:panel>
+ 
+    <p:panel id="craigmcclanahan" header="Craig McClanahan" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <p:graphicImage url="img/Craig-McClanahan-150.png" />
+            <h:outputText
+                value="Craig McClanahan, criador do Struts, um popular framework MVC de código aberto para a construção de aplicações web baseadas em Java, que é sem dúvida um dos frameworks mais utilizados por desenvolvedores Java." />
+        </h:panelGrid>
+    </p:panel>
+
+</h:form>	
+
+<br></br>
+<a href="index.xhtml">Voltar</a>
+</h:body>
+
+</html>
