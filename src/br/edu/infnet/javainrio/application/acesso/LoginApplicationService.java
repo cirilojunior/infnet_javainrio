@@ -22,7 +22,7 @@ public class LoginApplicationService {
 			throw new IllegalArgumentException("Senha nao informada.");
 		}
 
-		Participante participante = participanteRepository.buscarPorUsuarioESenha(login.getUsuario(), login.getSenha());
+		Participante participante = participanteRepository.verificar(login.getUsuario(), login.getSenha());
 
 		return new ParticipanteDTO(participante);
 

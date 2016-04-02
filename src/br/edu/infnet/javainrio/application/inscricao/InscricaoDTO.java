@@ -21,6 +21,7 @@ public class InscricaoDTO implements Serializable {
 	private String codigo;
 	private String nome;
 	private String cpf;
+	private String senha;
 	private List<String> areasInteresses;
 
 	// Contato
@@ -62,6 +63,14 @@ public class InscricaoDTO implements Serializable {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public List<String> getAreasInteresses() {
@@ -178,7 +187,7 @@ public class InscricaoDTO implements Serializable {
 	}
 
 	public Participante toParticipante() {
-		return new Participante(null, nome, cpf, toEnredeco(), toContato());
+		return new Participante(null, nome, cpf, toEnredeco(), toContato(), senha);
 	}
 
 }

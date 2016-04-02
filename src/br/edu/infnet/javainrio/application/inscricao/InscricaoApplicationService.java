@@ -10,13 +10,16 @@ import br.edu.infnet.javainrio.domain.comum.Constantes;
 import br.edu.infnet.javainrio.domain.inscricao.Inscricao;
 import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
+import br.edu.infnet.javainrio.domain.inscricao.ParticipanteJaCadastradoException;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
+import br.edu.infnet.javainrio.infrastructure.inscricao.InscricaoRepositoryJpa;
+import br.edu.infnet.javainrio.infrastructure.inscricao.ParticipanteRepositoryJpa;
 
 @Stateless
 public class InscricaoApplicationService {
 
-	private ParticipanteRepository participanteRepository;
-	private InscricaoRepository inscricaoRepository;
+	private ParticipanteRepository participanteRepository = new ParticipanteRepositoryJpa();
+	private InscricaoRepository inscricaoRepository = new InscricaoRepositoryJpa();
 
 	public IngressoDTO efetuar(InscricaoDTO dto) {
 
@@ -24,11 +27,17 @@ public class InscricaoApplicationService {
 		Integer anoEdicao = hoje.getYear();
 		BigDecimal valorPorDiaDoEvento = recuperaValorPorDia();
 
-		BigDecimal valorPagamento = dto.toPagamento().calcularTotal(valorPorDiaDoEvento);
+		BigDecimal valorPagamento = new BigDecimal("190");// dto.toPagamento().calcularTotal(valorPorDiaDoEvento);
 
-		Participante participante = participanteRepository.salvar(dto.toParticipante());
+		Participante participante = dto.toParticipante();
+		
+		if(participanteRepository.buscar(participante.getCpf()) != null) {
+			throw new ParticipanteJaCadastradoException();
+		}
+		
+		Participante participanteGravado = participanteRepository.salvar(participante);
 
-		Inscricao inscricao = new Inscricao(participante, anoEdicao, hoje, valorPagamento);
+		Inscricao inscricao = new Inscricao(participanteGravado, anoEdicao, hoje, valorPagamento);
 		inscricao.gerarCodigoIngresso();
 
 		inscricaoRepository.confirmar(inscricao);
@@ -36,7 +45,7 @@ public class InscricaoApplicationService {
 		IngressoDTO ingresso = new IngressoDTO();
 		ingresso.setCodigoIngresso(inscricao.getCodigoIngresso());
 		ingresso.setData(hoje.format(Constantes.FORMATADOR_DATAS));
-		ingresso.setNomeParticipante(participante.getNome());
+		ingresso.setNomeParticipante(participanteGravado.getNome());
 		ingresso.setValorTotal(valorPagamento.toString());
 
 		return ingresso;

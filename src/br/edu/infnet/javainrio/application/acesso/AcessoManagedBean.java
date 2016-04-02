@@ -18,7 +18,7 @@ public class AcessoManagedBean implements Serializable {
 
 	public String efetuarLogin(){
 		if(login.getUsuario().equals("admin") && login.getSenha().equals("admin")){
-			return "main";
+			return "pages/autenticado/main.xhtml";
 		}
 		
 		return "index";

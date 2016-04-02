@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Java In Rio - Inscrição efetuada</title>
+	<style type="text/css">
+body {
+	font-size: 10px;
+}
+</style>
+</h:head>
+
+<h:body>
+
+	<h:messages/>
+
+	<h:form id="confirmacaoInscricaoForm">
+		<p:growl id="messages" />
+		<p:panelGrid columns="3" style="width:470px;margin:10% 25% 10% 25%;">
+			<f:facet name="header">Dados da Inscrição</f:facet>
+
+			<h:outputLabel for="codigoIngresso" value="Ingresso" />
+			<p:inputText id="ingresso" readonly="true" value="#{inscricaoMB.ingreso.codigoIngresso}" label="codigoIngresso"></p:inputText>
+			<p:message for="codigoIngresso" />
+			
+			<h:outputLabel for="nomeParticipante" value="Nome do Participante" />
+			<p:inputText id="ingresso" readonly="true" value="#{inscricaoMB.ingreso.nomeParticipante}" label="nomeParticipante"></p:inputText>
+			<p:message for="nomeParticipante" />
+			
+			<h:outputLabel for="data" value="Data da Inscrição" />
+			<p:inputText id="data" readonly="true" value="#{inscricaoMB.ingreso.data}" label="data"></p:inputText>
+			<p:message for="data" />
+			
+			<h:outputLabel for="valorTotal" value="Valor Total" />
+			<p:inputText id="valorTotal" readonly="true" value="#{inscricaoMB.ingreso.valorTotal}" label="valorTotal"></p:inputText>
+			<p:message for="valorTotal" />
+		</p:panelGrid>
+	</h:form>
+
+	<br></br>
+	<a href="index.xhtml">Voltar</a>
+</h:body>
+</html>

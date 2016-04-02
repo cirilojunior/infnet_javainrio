@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Java In Rio - Inscrição</title>
+	<style type="text/css">
+body {
+	font-size: 10px;
+}
+</style>
+</h:head>
+
+<h:body>
+
+	<p:growl id="messages" />
+	
+	<h:form id="inscricaoForm">
+		<p:panelGrid columns="3" style="width:470px;margin:10% 25% 10% 25%;">
+			
+			<f:facet name="header">Inscrição</f:facet>
+			
+			<h:outputLabel for="nome" value="Nome" />
+			<p:inputText id="nome" required="true" value="#{inscricaoMB.inscricao.nome}" label="nome"></p:inputText>
+			<p:message for="nome" />
+			
+			<h:outputLabel for="cpf" value="CPF" />
+			<p:inputText id="cpf" required="true" value="#{inscricaoMB.inscricao.cpf}" label="cpf"></p:inputText>
+			<p:message for="cpf" />
+			
+			<h:outputLabel for="senha" value="Senha" />
+			<p:password id="senha" required="true" value="#{inscricaoMB.inscricao.senha}" label="senha"></p:password>
+			<p:message for="senha" />
+			
+			<h:outputLabel for="email" value="E-mail" />
+			<p:inputText id="email" required="true" value="#{inscricaoMB.inscricao.email}" label="email"></p:inputText>
+			<p:message for="email" />
+			
+			<h:outputLabel for="telefone" value="Telefone" />
+			<p:inputText id="telefone" required="true" value="#{inscricaoMB.inscricao.telefone}" label="telefone"></p:inputText>
+			<p:message for="telefone" />
+			
+			<h:outputLabel for="logradouro" value="Logradouro" />
+			<p:inputText id="logradouro" required="true" value="#{inscricaoMB.inscricao.logradouro}" label="logradouro"></p:inputText>
+			<p:message for="logradouro" />
+			
+			<h:outputLabel for="numero" value="Número" />
+			<p:inputText id="numero" required="true" value="#{inscricaoMB.inscricao.numero}" label="numero"></p:inputText>
+			<p:message for="numero" />
+			
+			<h:outputLabel for="complemento" value="Complemento" />
+			<p:inputText id="complemento" required="false" value="#{inscricaoMB.inscricao.complemento}" label="complemento"></p:inputText>
+			<p:message for="complemento" />
+			
+			<h:outputLabel for="bairro" value="Bairro" />
+			<p:inputText id="bairro" required="true" value="#{inscricaoMB.inscricao.bairro}" label="bairro"></p:inputText>
+			<p:message for="bairro" />
+			
+			<h:outputLabel for="cidade" value="Cidade" />
+			<p:inputText id="cidade" required="true" value="#{inscricaoMB.inscricao.cidade}" label="cidade"></p:inputText>
+			<p:message for="cidade" />
+			
+			<h:outputLabel for="estado" value="Estado" />
+			<p:inputText id="estado" required="true" value="#{inscricaoMB.inscricao.estado}" label="estado"></p:inputText>
+			<p:message for="estado" />
+			
+			<h:outputLabel for="cep" value="CEP" />
+			<p:inputText id="cep" required="true" value="#{inscricaoMB.inscricao.cep}" label="cep"></p:inputText>
+			<p:message for="cep" />
+				
+			<p><p:column colspan="3"><p:commandButton value="Ir para o pagamento" action="#{inscricaoMB.efetuarInscricao}" ajax="" /></p:column></p>
+		</p:panelGrid>
+		
+	</h:form>
+
+</h:body>
+</html>

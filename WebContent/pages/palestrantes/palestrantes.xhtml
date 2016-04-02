@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html 
-	xmlns="http://www.w3.org/1999/xhtml"  
-    xmlns:h="http://java.sun.com/jsf/html"  
-    xmlns:f="http://java.sun.com/jsf/core"  
-    xmlns:p="http://primefaces.org/ui"
->  
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Participantes</title>
-
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Java In Rio - Participantes</title>
 </h:head>
 <h:body>
-<h1>Participantes:</h1>
+	<h1>Participantes:</h1>
+	<h:form>
+		<p:growl id="msgs" showDetail="true" />
+
+		<p:panel id="jamesgosling" header="James Gosling"
+			style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage url="img/James-Gosling-150.png" />
+				<h:outputText
+					value="James Gosling, generally credited as the inventor of the Java programming language in 1994. He created the original design of Java and implemented its original compiler and virtual machine. For this achievement he was elected to the United States National Academy of Engineering. On April 2, 2010, he left Sun Microsystems which had recently been acquired by the Oracle Corporation. Regarding why he left, Gosling wrote on his blog that &quot;Just about anything I could say that would be accurate and honest would do more harm than good.&quot;" />
+			</h:panelGrid>
+		</p:panel>
+
+		<p:panel id="gavinking" header="Gavin King" style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage url="img/gravin-king-150.png" />
+				<h:outputText
+					value="Gavin King is the founder of the Hibernate project, a popular object/relational persistence solution for Java, and the creator of Seam, an application framework for Java EE 5. Furthermore, he contributed heavily to the design of EJB 3.0 and JPA." />
+			</h:panelGrid>
+		</p:panel>
+
+		<p:panel id="rodjohnson" header="Rod Johnson"
+			style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage url="img/Rod-Johnson-150.png" />
+				<h:outputText
+					value="Rod Johnson is the founder of the Spring Framework, an open source application framework for Java, Creator of Spring, CEO at SpringSource. Furthermore, Rod\'s best-selling Expert One-on-One J2EE Design and Development (2002) was one of the most influential books ever published on J2EE." />
+			</h:panelGrid>
+		</p:panel>
+
+		<p:panel id="craigmcclanahan" header="Craig McClanahan"
+			style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage url="img/Craig-McClanahan-150.png" />
+				<h:outputText
+					value="Craig Mcclanahan, creator of Struts, a popular open source MVC framework for building Java-based web applications, which is arguably that every Java developer know how to code Struts. With the huge success of Struts in early day, it\'s widely implemented in every single of the old Java web application project." />
+			</h:panelGrid>
+		</p:panel>
+<h1>Palestrantes:</h1>
 <h:form>
     <p:growl id="msgs" showDetail="true" />
  
@@ -20,7 +55,7 @@
         <h:panelGrid columns="2" cellpadding="10">
             <p:graphicImage url="img/James-Gosling-150.png" />
             <h:outputText
-                value="James Gosling, generally credited as the inventor of the Java programming language in 1994. He created the original design of Java and implemented its original compiler and virtual machine. For this achievement he was elected to the United States National Academy of Engineering. On April 2, 2010, he left Sun Microsystems which had recently been acquired by the Oracle Corporation. Regarding why he left, Gosling wrote on his blog that &quot;Just about anything I could say that would be accurate and honest would do more harm than good.&quot;" />
+                value="James Gosling é geralmente creditado como o inventor da linguagem de programação Java, em 1994. Ele criou o projeto original do Java e implementou o seu compilador e máquina virtual originais. Por essa conquista, ele foi eleito para a Academia Nacional  de Engenharia dos Estados Unidos." />
         </h:panelGrid>
     </p:panel>
  
@@ -28,7 +63,7 @@
         <h:panelGrid columns="2" cellpadding="10">
             <p:graphicImage url="img/gravin-king-150.png" />
             <h:outputText
-                value="Gavin King is the founder of the Hibernate project, a popular object/relational persistence solution for Java, and the creator of Seam, an application framework for Java EE 5. Furthermore, he contributed heavily to the design of EJB 3.0 and JPA." />
+                value="Gavin King é o fundador do projeto Hibernate, uma popular solução de persistência objeto/relacional para Java, e criador do Seam, um framework para aplicações para Java EE 5. Além disso, ele contribuiu fortemente para o projeto de EJB 3.0 e JPA." />
         </h:panelGrid>
     </p:panel>
  
@@ -36,7 +71,7 @@
         <h:panelGrid columns="2" cellpadding="10">
             <p:graphicImage url="img/Rod-Johnson-150.png" />
             <h:outputText
-                value="Rod Johnson is the founder of the Spring Framework, an open source application framework for Java, Creator of Spring, CEO at SpringSource. Furthermore, Rod\'s best-selling Expert One-on-One J2EE Design and Development (2002) was one of the most influential books ever published on J2EE." />
+                value="Rod Johnson é o criador do Spring Framework, um framework para aplicações de código aberto para Java, e CEO da SpringSource. Além disso, seu best-seller Expert One-on-One J2EE Design and Development (2002) foi um dos mais influentes livros já publicados em J2EE." />
         </h:panelGrid>
     </p:panel>
  
@@ -44,14 +79,14 @@
         <h:panelGrid columns="2" cellpadding="10">
             <p:graphicImage url="img/Craig-McClanahan-150.png" />
             <h:outputText
-                value="Craig Mcclanahan, creator of Struts, a popular open source MVC framework for building Java-based web applications, which is arguably that every Java developer know how to code Struts. With the huge success of Struts in early day, it\'s widely implemented in every single of the old Java web application project." />
+                value="Craig McClanahan, criador do Struts, um popular framework MVC de código aberto para a construção de aplicações web baseadas em Java, que é sem dúvida um dos frameworks mais utilizados por desenvolvedores Java." />
         </h:panelGrid>
     </p:panel>
 
-</h:form>	
+	</h:form>
 
-<br></br>
-<a href="index.xhtml">Voltar</a>
+	<br></br>
+	<a href="index.xhtml">Voltar</a>
 </h:body>
 
 </html>
