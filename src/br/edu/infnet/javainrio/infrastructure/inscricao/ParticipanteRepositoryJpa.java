@@ -10,13 +10,13 @@ public class ParticipanteRepositoryJpa implements ParticipanteRepository {
 
 	@Override
 	public Participante buscarPorUsuarioESenha(String usuario, String senha) {
-		// TODO implementar.
+		System.out.println("Buscando participante por usuario e senha.");
 		return null;
 	}
 
 	@Override
 	public Participante salvar(Participante participante) {
-		// TODO implementar.
+		System.out.println("Salvando partipante.");
 		return null;
 	}
 

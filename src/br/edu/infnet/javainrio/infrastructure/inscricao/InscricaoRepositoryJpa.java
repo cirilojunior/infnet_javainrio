@@ -11,12 +11,12 @@ public class InscricaoRepositoryJpa implements InscricaoRepository {
 
 	@Override
 	public void confirmar(Inscricao inscricao) {
-		// TODO implementar...
+		System.out.println("Confirmando inscricao.");
 	}
 	
 	@Override
 	public List<InscricaoDTO> listar() {
-
+		System.out.println("Listando inscricoes.");
 		return new ArrayList<InscricaoDTO>();
 	}
 

@@ -14,11 +14,11 @@ import br.edu.infnet.javainrio.domain.edicao.EdicaoRepository;
  * Repositorio em memoria. Nao houve a necessidade de cadastrar em banco ainda,
  * pois e o segundo evento.
  */
-public class EdicaoRepositoryImMemory implements EdicaoRepository {
+public class EdicaoRepositoryInMemory implements EdicaoRepository {
 
 	private static final List<Edicao> edicoes = new ArrayList<>();
 
-	public EdicaoRepositoryImMemory() {
+	public EdicaoRepositoryInMemory() {
 		Endereco local = new Endereco("Rua Java", "100", null, "TIsópolis", "Rio de Janeiro", Estado.RJ, "22222-222");
 		Contato contato = new Contato("2371-2212", "contato@javainrio.com.br");
 
