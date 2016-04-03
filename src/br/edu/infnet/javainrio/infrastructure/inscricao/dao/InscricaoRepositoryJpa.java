@@ -17,7 +17,33 @@ public class InscricaoRepositoryJpa implements InscricaoRepository {
 	@Override
 	public List<InscricaoDTO> listar() {
 		System.out.println("Listando inscricoes.");
-		return new ArrayList<InscricaoDTO>();
+		ArrayList<InscricaoDTO> lInscricao = new ArrayList<InscricaoDTO>();
+		InscricaoDTO inscricao = new InscricaoDTO();
+
+		inscricao.setEmail("pedro@gmail.com");
+		inscricao.setNome("pedro");
+		inscricao.setCpf("12212222222");
+		
+		lInscricao.add(inscricao);
+
+		
+		inscricao = new InscricaoDTO();
+
+		inscricao.setEmail("eduardo@gmail.com");
+		inscricao.setNome("eduardo");
+		inscricao.setCpf("121313131313");
+		
+		lInscricao.add(inscricao);
+		
+		inscricao = new InscricaoDTO();
+
+		inscricao.setEmail("cirilo@gmail.com");
+		inscricao.setNome("cirilo");
+		inscricao.setCpf("12212222222");
+		
+		lInscricao.add(inscricao);
+		
+		return lInscricao;
 	}
 
 }
