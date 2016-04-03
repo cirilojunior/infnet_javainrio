@@ -51,7 +51,7 @@ public class InscricaoApplicationService {
 		return ingresso;
 	}
 
-	private BigDecimal recuperaValorPorDia() {
+	public BigDecimal recuperaValorPorDia() {
 		ResourceBundle parametros = ResourceBundle.getBundle("parametros");
 		return new BigDecimal(parametros.getString("valor.dia"));
 	}
