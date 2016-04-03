@@ -17,6 +17,9 @@ public class Inscricao {
 		this.anoEdicao = anoEdicao;
 		this.data = data;
 		this.valorPago = valorPago;
+
+		// Geracao do codigo da inscricao
+		this.codigoIngresso = UUID.randomUUID().toString();
 	}
 
 	public Participante getParticipante() {
@@ -37,10 +40,6 @@ public class Inscricao {
 
 	public String getCodigoIngresso() {
 		return codigoIngresso;
-	}
-
-	public void gerarCodigoIngresso() {
-		this.codigoIngresso = UUID.randomUUID().toString();
 	}
 
 }

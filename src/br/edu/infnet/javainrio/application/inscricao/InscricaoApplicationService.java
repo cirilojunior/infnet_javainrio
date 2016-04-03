@@ -38,7 +38,6 @@ public class InscricaoApplicationService {
 		Participante participanteGravado = participanteRepository.salvar(participante);
 
 		Inscricao inscricao = new Inscricao(participanteGravado, anoEdicao, hoje, valorPagamento);
-		inscricao.gerarCodigoIngresso();
 
 		inscricaoRepository.confirmar(inscricao);
 
