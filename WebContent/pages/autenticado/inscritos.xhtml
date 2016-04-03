@@ -16,15 +16,15 @@
     <p:growl id="msgs" showDetail="true" />
  
 	<p:dataTable id="tabela" var="item" value="#{inscricaoMB.lista}"
-		paginator="true" rows="50" emptyMessage="Não há registros na lista"
+		paginator="true" rows="50" emptyMessage="NÃ£o hÃ¡ registros na lista"
 		paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 		rowsPerPageTemplate="10,15,25,50,100">
 		<f:facet name="header">Lista de Inscritos</f:facet>
-		<p:column headerText="ID" style="width: 10%;"
+		<p:column headerText="Nome" style="width: 10%;"
 			sortBy="#{item.nome}">
 			<h:outputText value="#{item.nome}" />
 		</p:column>
-		<p:column headerText="Nome" style="width: 25%;" sortBy="#{item.cpf}">
+		<p:column headerText="CPF" style="width: 25%;" sortBy="#{item.cpf}">
 			<h:outputText value="#{item.cpf}" />
 		</p:column>
 		<p:column headerText="E-mail" style="width: 25%;"
