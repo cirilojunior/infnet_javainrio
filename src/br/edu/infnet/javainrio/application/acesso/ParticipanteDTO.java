@@ -1,9 +1,12 @@
 package br.edu.infnet.javainrio.application.acesso;
 
+import java.io.Serializable;
+
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 
-public class ParticipanteDTO {
+public class ParticipanteDTO implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Integer codigo;
 	private String nome;
 
@@ -33,4 +36,7 @@ public class ParticipanteDTO {
 		this.nome = nome;
 	}
 
+	public boolean isAdmin() {
+		return false;
+	}
 }

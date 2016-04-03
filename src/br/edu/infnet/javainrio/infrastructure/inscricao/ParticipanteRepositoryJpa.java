@@ -14,6 +14,10 @@ public class ParticipanteRepositoryJpa implements ParticipanteRepository {
 	private static List<Participante> participantes = new ArrayList<>();
 	private static int ID_COUNTER = 0;
 
+	public ParticipanteRepositoryJpa() {
+		participantes.add(new Participante(ID_COUNTER, "Administrador", "admin", null, null, "admin"));
+	}
+
 	@Override
 	public Participante buscar(String usuario) {
 		System.out.println("Buscando participante por usuario(cpf).");
@@ -30,16 +34,16 @@ public class ParticipanteRepositoryJpa implements ParticipanteRepository {
 	@Override
 	public Participante verificar(String usuario, String senha) {
 		System.out.println("Verificando existencia do participante por usuario e senha.");
-		
+
 		for (Participante p : participantes) {
 			if (p.getCpf().equals(usuario) && p.getSenha().equals(senha)) {
 				return p;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	@Override
 	public Participante salvar(Participante participante) {
 		System.out.println("Salvando partipante.");
