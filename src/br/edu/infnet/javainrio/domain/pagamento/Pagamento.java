@@ -1,31 +1,38 @@
 package br.edu.infnet.javainrio.domain.pagamento;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import br.edu.infnet.javainrio.domain.inscricao.DiasEvento;
 
 public class Pagamento {
 
 	public enum BandeiraCartao {
 
-		VISA("desconto.visa"), 
-		MASTERCARD("desconto.mastercard"), 
-		AMERICAN_EXPRESS("desconto.american.express");
+		VISA("desconto.visa", "Visa"), 
+		MASTERCARD("desconto.mastercard", "MasterCard"), 
+		AMERICAN_EXPRESS("desconto.american.express", "American Express");
 
-		private BandeiraCartao(String parametroDesconto) {
+		private String parametroDesconto;
+		private String rotulo;
+		
+		private BandeiraCartao(String parametroDesconto, String rotulo) {
 			this.parametroDesconto = parametroDesconto;
+			this.rotulo = rotulo;
 		}
-
-		String parametroDesconto;
+		
+		public String getRotulo() {
+			return rotulo;
+		}
 
 	}
 
 	private BandeiraCartao bandeiraCartao;
-	private List<LocalDate> dias;
+	private List<DiasEvento> dias;
 
-	public Pagamento(BandeiraCartao bandeiraCartao, List<LocalDate> dias) {
+	public Pagamento(BandeiraCartao bandeiraCartao, List<DiasEvento> dias) {
 		if (bandeiraCartao == null) {
 			throw new IllegalArgumentException("Bandeira do cartao nao informada.");
 		}
@@ -42,7 +49,7 @@ public class Pagamento {
 		return bandeiraCartao;
 	}
 
-	public List<LocalDate> getDias() {
+	public List<DiasEvento> getDias() {
 		return Collections.unmodifiableList(dias);
 	}
 
@@ -52,13 +59,13 @@ public class Pagamento {
 		}
 
 		BigDecimal fatorDesconto = recuperaFatorDeDesconto(bandeiraCartao.parametroDesconto);
-		
+
 		BigDecimal valorPorDiaFInal = valorPorDia.multiply(fatorDesconto);
 		BigDecimal totalDeDias = new BigDecimal(dias.size());
 
 		return valorPorDiaFInal.multiply(totalDeDias);
 	}
-	
+
 	private BigDecimal recuperaFatorDeDesconto(String parametroDesconto) {
 		ResourceBundle parametros = ResourceBundle.getBundle("parametros");
 		return new BigDecimal(parametros.getString(parametroDesconto));

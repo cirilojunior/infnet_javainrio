@@ -27,7 +27,7 @@ public class InscricaoApplicationService {
 		Integer anoEdicao = hoje.getYear();
 		BigDecimal valorPorDiaDoEvento = recuperaValorPorDia();
 
-		BigDecimal valorPagamento = new BigDecimal("190");// dto.toPagamento().calcularTotal(valorPorDiaDoEvento);
+		BigDecimal valorPagamento = dto.toPagamento().calcularTotal(valorPorDiaDoEvento);
 
 		Participante participante = dto.toParticipante();
 		

@@ -1,17 +1,15 @@
 package br.edu.infnet.javainrio.application.inscricao;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.infnet.javainrio.domain.comum.Constantes;
 import br.edu.infnet.javainrio.domain.comum.Contato;
 import br.edu.infnet.javainrio.domain.comum.Endereco;
 import br.edu.infnet.javainrio.domain.comum.Estado;
+import br.edu.infnet.javainrio.domain.inscricao.AreaInteresse;
+import br.edu.infnet.javainrio.domain.inscricao.DiasEvento;
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.pagamento.Pagamento;
-import br.edu.infnet.javainrio.domain.pagamento.Pagamento.BandeiraCartao;
 
 public class InscricaoDTO implements Serializable {
 
@@ -22,7 +20,7 @@ public class InscricaoDTO implements Serializable {
 	private String nome;
 	private String cpf;
 	private String senha;
-	private List<String> areasInteresses;
+	private List<AreaInteresse> areasInteresse;
 
 	// Contato
 	private String telefone;
@@ -38,8 +36,8 @@ public class InscricaoDTO implements Serializable {
 	private String cep;
 
 	// Pagamento
-	private List<String> diasSelecionados;
-	private String bandeiraCartao;
+	private List<DiasEvento> diasSelecionados;
+	private Pagamento.BandeiraCartao bandeiraCartao;
 
 	public String getCodigo() {
 		return codigo;
@@ -73,12 +71,12 @@ public class InscricaoDTO implements Serializable {
 		this.senha = senha;
 	}
 
-	public List<String> getAreasInteresses() {
-		return areasInteresses;
+	public List<AreaInteresse> getAreasInteresse() {
+		return areasInteresse;
 	}
 
-	public void setAreasInteresses(List<String> areasInteresses) {
-		this.areasInteresses = areasInteresses;
+	public void setAreasInteresse(List<AreaInteresse> areasInteresse) {
+		this.areasInteresse = areasInteresse;
 	}
 
 	public String getTelefone() {
@@ -153,19 +151,19 @@ public class InscricaoDTO implements Serializable {
 		this.cep = cep;
 	}
 
-	public List<String> getDiasSelecionados() {
+	public List<DiasEvento> getDiasSelecionados() {
 		return diasSelecionados;
 	}
 
-	public void setDiasSelecionados(List<String> diasSelecionados) {
+	public void setDiasSelecionados(List<DiasEvento> diasSelecionados) {
 		this.diasSelecionados = diasSelecionados;
 	}
 
-	public String getBandeiraCartao() {
+	public Pagamento.BandeiraCartao getBandeiraCartao() {
 		return bandeiraCartao;
 	}
 
-	public void setBandeiraCartao(String bandeiraCartao) {
+	public void setBandeiraCartao(Pagamento.BandeiraCartao bandeiraCartao) {
 		this.bandeiraCartao = bandeiraCartao;
 	}
 
@@ -178,12 +176,7 @@ public class InscricaoDTO implements Serializable {
 	}
 
 	public Pagamento toPagamento() {
-		List<LocalDate> datas = new ArrayList<>();
-		for (String data : diasSelecionados) {
-			datas.add(LocalDate.parse(data, Constantes.FORMATADOR_DATAS));
-		}
-
-		return new Pagamento(BandeiraCartao.valueOf(bandeiraCartao), datas);
+		return new Pagamento(bandeiraCartao, diasSelecionados);
 	}
 
 	public Participante toParticipante() {
