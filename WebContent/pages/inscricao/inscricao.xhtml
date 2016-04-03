@@ -9,6 +9,7 @@
 	<title>Java In Rio - Inscrição</title>
 	<style type="text/css">
 body {
+	font-family: arial;
 	font-size: 10px;
 }
 </style>
@@ -18,7 +19,7 @@ body {
 
 	<p:growl id="messages" />
 	
-	<h:form id="inscricaoForm">
+	<h:form id="inscricaoForm" >
 		<p:panelGrid columns="3" style="width:470px;margin:10% 25% 10% 25%;">
 			
 			<f:facet name="header">Inscrição</f:facet>
@@ -71,7 +72,8 @@ body {
 			<p:inputText id="cep" required="true" value="#{inscricaoMB.inscricao.cep}" label="cep"></p:inputText>
 			<p:message for="cep" />
 				
-			<p><p:column colspan="3"><p:commandButton value="Ir para o pagamento" action="#{inscricaoMB.efetuarInscricao}" ajax="" /></p:column></p>
+			<p:commandButton value="Ir para o pagamento" action="#{inscricaoMB.efetuarInscricao}" ajax="false" />
+			<a href="/JavaInRio/index.xhtml">Voltar</a>
 		</p:panelGrid>
 		
 	</h:form>

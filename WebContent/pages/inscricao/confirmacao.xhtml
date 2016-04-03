@@ -9,6 +9,7 @@
 	<title>Java In Rio - Inscrição efetuada</title>
 	<style type="text/css">
 body {
+	font-family: arial;
 	font-size: 10px;
 }
 </style>
@@ -16,32 +17,36 @@ body {
 
 <h:body>
 
-	<h:messages/>
-
 	<h:form id="confirmacaoInscricaoForm">
 		<p:growl id="messages" />
 		<p:panelGrid columns="3" style="width:470px;margin:10% 25% 10% 25%;">
 			<f:facet name="header">Dados da Inscrição</f:facet>
 
 			<h:outputLabel for="codigoIngresso" value="Ingresso" />
-			<p:inputText id="ingresso" readonly="true" value="#{inscricaoMB.ingreso.codigoIngresso}" label="codigoIngresso"></p:inputText>
+			<p:inputText id="codigoIngresso" readonly="true"
+				value="#{inscricaoMB.ingresso.codigoIngresso}"
+				label="codigoIngresso"></p:inputText>
 			<p:message for="codigoIngresso" />
-			
+
 			<h:outputLabel for="nomeParticipante" value="Nome do Participante" />
-			<p:inputText id="ingresso" readonly="true" value="#{inscricaoMB.ingreso.nomeParticipante}" label="nomeParticipante"></p:inputText>
+			<p:inputText id="nomeParticipante" readonly="true"
+				value="#{inscricaoMB.ingresso.nomeParticipante}"
+				label="nomeParticipante"></p:inputText>
 			<p:message for="nomeParticipante" />
-			
+
 			<h:outputLabel for="data" value="Data da Inscrição" />
-			<p:inputText id="data" readonly="true" value="#{inscricaoMB.ingreso.data}" label="data"></p:inputText>
+			<p:inputText id="data" readonly="true"
+				value="#{inscricaoMB.ingresso.data}" label="data"></p:inputText>
 			<p:message for="data" />
-			
+
 			<h:outputLabel for="valorTotal" value="Valor Total" />
-			<p:inputText id="valorTotal" readonly="true" value="#{inscricaoMB.ingreso.valorTotal}" label="valorTotal"></p:inputText>
+			<p:inputText id="valorTotal" readonly="true"
+				value="#{inscricaoMB.ingresso.valorTotal}" label="valorTotal"></p:inputText>
 			<p:message for="valorTotal" />
 		</p:panelGrid>
+
+		<a href="index.xhtml">Voltar</a>
 	</h:form>
 
-	<br></br>
-	<a href="index.xhtml">Voltar</a>
 </h:body>
 </html>

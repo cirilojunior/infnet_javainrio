@@ -49,12 +49,12 @@ public class InscricaoManagedBean implements Serializable {
 			ingresso = inscricaoApplicationService.efetuar(inscricao);
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Você é mais um nerd que participará do evento!", ""));
-			return "pages/inscricao/confirmacao.xhtml";
+			return "confirmacao";
 		} catch (Exception e) {
 			e.printStackTrace();
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Ocorreu um erro na inscrição!", ""));
-			return "pages/inscricao/inscricao.xhtml";
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Sua inscrição já foi realizada com sucesso.", ""));
+			return "inscricao";
 		}
 	}
 
