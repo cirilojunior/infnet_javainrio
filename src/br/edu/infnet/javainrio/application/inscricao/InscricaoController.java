@@ -15,7 +15,7 @@ import br.edu.infnet.javainrio.infrastructure.inscricao.InscricaoRepositoryJpa;
 
 @ManagedBean(name = "inscricaoMB")
 @SessionScoped
-public class InscricaoManagedBean implements Serializable {
+public class InscricaoController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,7 +26,7 @@ public class InscricaoManagedBean implements Serializable {
 	@EJB
 	private InscricaoApplicationService inscricaoApplicationService;
 
-	public InscricaoManagedBean() {
+	public InscricaoController() {
 		buscarInscritos();
 	}
 

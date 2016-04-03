@@ -7,12 +7,12 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "acessoMB")
 @SessionScoped
-public class AcessoManagedBean implements Serializable {
+public class AcessoController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private LoginDTO login;
 
-	public AcessoManagedBean() {
+	public AcessoController() {
 		this.login = new LoginDTO();
 	}
 

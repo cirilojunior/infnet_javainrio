@@ -10,7 +10,7 @@ import br.edu.infnet.javainrio.application.inscricao.InscricaoApplicationService
 
 @ManagedBean(name = "paginaInicialMB")
 @ApplicationScoped
-public class PaginaInicialManagedBean implements Serializable {
+public class PaginaInicialController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@EJB
