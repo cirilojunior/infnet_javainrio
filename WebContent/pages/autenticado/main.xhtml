@@ -17,7 +17,7 @@
 Usuário logado: #{acessoMB.participante.nome}
 
 <h:form>
-  	<p:commandButton value="Lista de Inscritos" ajax="false" action="inscritos.xhtml"></p:commandButton>
+  	<p:commandButton value="Lista de Inscritos" ajax="false" action="inscritos.xhtml" rendered="#{acessoMB.participante.admin}"></p:commandButton>
 
     <p:growl id="msgs" showDetail="true" />
   

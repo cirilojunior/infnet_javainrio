@@ -1,4 +1,4 @@
-package br.edu.infnet.javainrio.infrastructure.inscricao;
+package br.edu.infnet.javainrio.infrastructure.inscricao.dao;
 
 import java.util.ArrayList;
 import java.util.List;

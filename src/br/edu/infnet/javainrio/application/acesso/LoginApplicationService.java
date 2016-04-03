@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
-import br.edu.infnet.javainrio.infrastructure.inscricao.ParticipanteRepositoryJpa;
+import br.edu.infnet.javainrio.infrastructure.inscricao.dao.ParticipanteRepositoryJpa;
 
 @Stateless
 public class LoginApplicationService {

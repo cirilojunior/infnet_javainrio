@@ -12,8 +12,8 @@ import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteJaCadastradoException;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
-import br.edu.infnet.javainrio.infrastructure.inscricao.InscricaoRepositoryJpa;
-import br.edu.infnet.javainrio.infrastructure.inscricao.ParticipanteRepositoryJpa;
+import br.edu.infnet.javainrio.infrastructure.inscricao.dao.InscricaoRepositoryJpa;
+import br.edu.infnet.javainrio.infrastructure.inscricao.dao.ParticipanteRepositoryJpa;
 
 @Stateless
 public class InscricaoApplicationService {

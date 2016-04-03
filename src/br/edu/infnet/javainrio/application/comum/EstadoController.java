@@ -1,4 +1,4 @@
-package br.edu.infnet.javainrio.infrastructure.comum;
+package br.edu.infnet.javainrio.application.comum;
 
 import java.io.Serializable;
 
@@ -10,7 +10,7 @@ import br.edu.infnet.javainrio.domain.comum.Estado;
 
 @ManagedBean(name = "estadosMB")
 @ApplicationScoped
-public class EstadoManagedBean implements Serializable {
+public class EstadoController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

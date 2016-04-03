@@ -11,7 +11,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
-import br.edu.infnet.javainrio.infrastructure.inscricao.InscricaoRepositoryJpa;
+import br.edu.infnet.javainrio.infrastructure.inscricao.dao.InscricaoRepositoryJpa;
 
 @ManagedBean(name = "inscricaoMB")
 @SessionScoped

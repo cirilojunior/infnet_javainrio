@@ -1,4 +1,4 @@
-package br.edu.infnet.javainrio.infrastructure.pagamento;
+package br.edu.infnet.javainrio.infrastructure.pagamento.jsf;
 
 import javax.faces.convert.EnumConverter;
 import javax.faces.convert.FacesConverter;

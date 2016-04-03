@@ -1,4 +1,4 @@
-package br.edu.infnet.javainrio.infrastructure.edicao;
+package br.edu.infnet.javainrio.infrastructure.edicao.dao;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

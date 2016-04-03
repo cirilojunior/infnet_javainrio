@@ -1,4 +1,4 @@
-package br.edu.infnet.javainrio.infrastructure.pagamento;
+package br.edu.infnet.javainrio.application.pagamento;
 
 import java.io.Serializable;
 
@@ -10,7 +10,7 @@ import br.edu.infnet.javainrio.domain.pagamento.Pagamento;
 
 @ManagedBean(name = "bandeirasCartaoMB")
 @ApplicationScoped
-public class BandeiraCartaoManagedBean implements Serializable {
+public class BandeiraCartaoController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

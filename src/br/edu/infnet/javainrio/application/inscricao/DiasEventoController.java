@@ -1,4 +1,4 @@
-package br.edu.infnet.javainrio.infrastructure.inscricao;
+package br.edu.infnet.javainrio.application.inscricao;
 
 import java.io.Serializable;
 
@@ -10,7 +10,7 @@ import br.edu.infnet.javainrio.domain.inscricao.DiasEvento;
 
 @ManagedBean(name = "diasEventoMB")
 @ApplicationScoped
-public class DiasEventoManagedBean implements Serializable {
+public class DiasEventoController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
