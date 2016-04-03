@@ -180,7 +180,7 @@ public class InscricaoDTO implements Serializable {
 	}
 
 	public Participante toParticipante() {
-		return new Participante(null, nome, cpf, toEnredeco(), toContato(), senha);
+		return new Participante(nome, cpf, toEnredeco(), toContato(), senha);
 	}
 
 }

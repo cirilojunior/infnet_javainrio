@@ -12,7 +12,7 @@ import br.edu.infnet.javainrio.domain.edicao.EdicaoRepository;
 
 /**
  * Repositorio em memoria. Nao houve a necessidade de cadastrar em banco ainda,
- * pois e o segundo evento.
+ * pois e o segundo evento, e primeiro com site, segundo a contextualizacao do trabalho.
  */
 public class EdicaoRepositoryInMemory implements EdicaoRepository {
 

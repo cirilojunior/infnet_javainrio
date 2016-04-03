@@ -3,17 +3,26 @@ package br.edu.infnet.javainrio.infrastructure.inscricao.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import br.edu.infnet.javainrio.application.inscricao.InscricaoDTO;
 import br.edu.infnet.javainrio.domain.inscricao.Inscricao;
 import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
 
+/**
+ * Repositorio de Inscricoes com JPA.
+ */
 public class InscricaoRepositoryJpa implements InscricaoRepository {
+
+	@PersistenceContext
+	private EntityManager em;
 
 	@Override
 	public void confirmar(Inscricao inscricao) {
 		System.out.println("Confirmando inscricao.");
 	}
-	
+
 	@Override
 	public List<InscricaoDTO> listar() {
 		System.out.println("Listando inscricoes.");
@@ -23,26 +32,25 @@ public class InscricaoRepositoryJpa implements InscricaoRepository {
 		inscricao.setEmail("pedro@gmail.com");
 		inscricao.setNome("pedro");
 		inscricao.setCpf("12212222222");
-		
+
 		lInscricao.add(inscricao);
 
-		
 		inscricao = new InscricaoDTO();
 
 		inscricao.setEmail("eduardo@gmail.com");
 		inscricao.setNome("eduardo");
 		inscricao.setCpf("121313131313");
-		
+
 		lInscricao.add(inscricao);
-		
+
 		inscricao = new InscricaoDTO();
 
 		inscricao.setEmail("cirilo@gmail.com");
 		inscricao.setNome("cirilo");
 		inscricao.setCpf("12212222222");
-		
+
 		lInscricao.add(inscricao);
-		
+
 		return lInscricao;
 	}
 

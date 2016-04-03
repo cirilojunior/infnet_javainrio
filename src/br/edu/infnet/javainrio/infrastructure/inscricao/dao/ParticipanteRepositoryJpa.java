@@ -12,10 +12,9 @@ import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
 public class ParticipanteRepositoryJpa implements ParticipanteRepository {
 
 	private static List<Participante> participantes = new ArrayList<>();
-	private static int ID_COUNTER = 0;
 
 	public ParticipanteRepositoryJpa() {
-		participantes.add(new Participante(ID_COUNTER, "Administrador", "admin", null, null, "admin"));
+		participantes.add(new Participante("Administrador", "admin", null, null, "admin"));
 	}
 
 	@Override
@@ -51,7 +50,7 @@ public class ParticipanteRepositoryJpa implements ParticipanteRepository {
 			return null;
 		}
 
-		Participante gravado = new Participante(++ID_COUNTER, participante.getNome(), participante.getCpf(),
+		Participante gravado = new Participante(participante.getNome(), participante.getCpf(),
 				participante.getEndereco(), participante.getContato(), participante.getSenha());
 		participantes.add(gravado);
 		return gravado;

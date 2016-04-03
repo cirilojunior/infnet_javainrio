@@ -5,24 +5,18 @@ import br.edu.infnet.javainrio.domain.comum.Endereco;
 
 public class Participante {
 
-	private Integer codigo;
 	private String nome;
 	private String cpf;
 	private Endereco endereco;
 	private Contato contato;
 	private String senha;
 
-	public Participante(Integer codigo, String nome, String cpf, Endereco endereco, Contato contato, String senha) {
-		this.codigo = codigo;
+	public Participante(String nome, String cpf, Endereco endereco, Contato contato, String senha) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.endereco = endereco;
 		this.contato = contato;
 		this.senha = senha;
-	}
-
-	public Integer getCodigo() {
-		return codigo;
 	}
 
 	public String getNome() {
