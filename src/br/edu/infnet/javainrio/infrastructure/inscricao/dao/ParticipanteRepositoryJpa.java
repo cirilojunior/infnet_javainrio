@@ -1,9 +1,11 @@
 package br.edu.infnet.javainrio.infrastructure.inscricao.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
@@ -14,49 +16,38 @@ import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
 @Stateless
 public class ParticipanteRepositoryJpa implements ParticipanteRepository {
 
-	private static List<Participante> participantes = new ArrayList<>();
-
-	public ParticipanteRepositoryJpa() {
-		participantes.add(new Participante("Administrador", "admin", null, null, "admin"));
-	}
+	@PersistenceContext(name = "javainrio")
+	private EntityManager em;
 
 	@Override
 	public Participante buscar(String usuario) {
 		System.out.println("Buscando participante por usuario(cpf).");
 
-		for (Participante p : participantes) {
-			if (p.getCpf().equals(usuario)) {
-				return p;
-			}
+		TypedQuery<InscricaoEntity> query = em.createQuery(
+				"SELECT i FROM InscricaoEntity i WHERE i.participante.cpf = " + usuario, InscricaoEntity.class);
+		List<InscricaoEntity> resultado = query.getResultList();
+		if (resultado.isEmpty()) {
+			return null;
 		}
 
-		return null;
+		return resultado.get(0).getParticipante().toDomain();
+
 	}
 
 	@Override
 	public Participante verificar(String usuario, String senha) {
-		System.out.println("Verificando existencia do participante por usuario e senha.");
+		System.out.println("Buscando participante por usuario(cpf) e senha.");
 
-		for (Participante p : participantes) {
-			if (p.getCpf().equals(usuario) && p.getSenha().equals(senha)) {
-				return p;
-			}
-		}
-
-		return null;
-	}
-
-	@Override
-	public Participante salvar(Participante participante) {
-		System.out.println("Salvando partipante.");
-		if (participantes.contains(participante)) {
+		TypedQuery<InscricaoEntity> query = em
+				.createQuery("SELECT i FROM InscricaoEntity i WHERE i.participante.cpf = '" + usuario
+						+ "' and senha = '" + senha + "'", InscricaoEntity.class);
+		List<InscricaoEntity> resultado = query.getResultList();
+		if (resultado.isEmpty()) {
 			return null;
 		}
 
-		Participante gravado = new Participante(participante.getNome(), participante.getCpf(),
-				participante.getEndereco(), participante.getContato(), participante.getSenha());
-		participantes.add(gravado);
-		return gravado;
+		return resultado.get(0).getParticipante().toDomain();
+
 	}
 
 }

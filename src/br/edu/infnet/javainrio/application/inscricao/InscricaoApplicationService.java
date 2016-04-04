@@ -36,16 +36,14 @@ public class InscricaoApplicationService {
 			throw new ParticipanteJaCadastradoException();
 		}
 
-		Participante participanteGravado = participanteRepository.salvar(participante);
-
-		Inscricao inscricao = new Inscricao(participanteGravado, anoEdicao, hoje, valorPagamento);
+		Inscricao inscricao = new Inscricao(participante, anoEdicao, hoje, valorPagamento);
 
 		inscricaoRepository.confirmar(inscricao);
 
 		IngressoDTO ingresso = new IngressoDTO();
 		ingresso.setCodigoIngresso(inscricao.getCodigoIngresso());
 		ingresso.setData(hoje.format(Constantes.FORMATADOR_DATAS));
-		ingresso.setNomeParticipante(participanteGravado.getNome());
+		ingresso.setNomeParticipante(participante.getNome());
 		ingresso.setValorTotal(valorPagamento.toString());
 
 		return ingresso;

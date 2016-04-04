@@ -18,8 +18,7 @@ import javax.persistence.TemporalType;
 import br.edu.infnet.javainrio.domain.inscricao.Inscricao;
 
 @Entity
-// @Table(schema = "infnet_java_javainrio", name = "inscricao")
-@Table(name = "inscricao")
+@Table(schema = "infnet_java_javainrio", name = "inscricao")
 public class InscricaoEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;

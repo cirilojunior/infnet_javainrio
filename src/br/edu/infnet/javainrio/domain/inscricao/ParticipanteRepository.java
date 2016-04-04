@@ -9,6 +9,4 @@ public interface ParticipanteRepository {
 
 	Participante verificar(String usuario, String senha);
 
-	Participante salvar(Participante participante);
-
 }

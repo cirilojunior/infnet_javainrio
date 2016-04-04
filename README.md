@@ -10,7 +10,9 @@ no Eclipse por todos do grupo, os arquivos de configuração do projeto na IDE tam
 versionados. Isso será evoluido posteriormente.
 - Caminho do script de criação de banco: database_scripts\create_database.sql
 - Datasource: java:/jboss/jdbc/JavaInRio
-
+- Dependencias na pasta lib: 
+	- commons-lang3-3.4.jar
+	- primefaces-5.3.jar
 
 Roadmap:
 - Log (SLF4J)

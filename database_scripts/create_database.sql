@@ -1,3 +1,4 @@
+-- TABELA DE INSCRICOES
 CREATE TABLE `inscricao` (
   `codigoIngresso` varchar(50) NOT NULL,
   `anoEdicao` int(10) unsigned NOT NULL,
@@ -18,3 +19,8 @@ CREATE TABLE `inscricao` (
   PRIMARY KEY (`codigoIngresso`),
   UNIQUE KEY `cpf_UNIQUE` (`cpf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- USUARIO ADMIN
+insert into `inscricao`(anoEdicao, data, email, telefone, cpf, bairro, cep, cidade, complemento, estado, logradouro, numero, nome, senha, valorPago, codigoIngresso) 
+values(0,sysdate(), 'admin@javainrio.com', 'tel', 'admin', 'bairro', 'cep', 'cidade', null, 'RJ', 'rua', '0', 'admin', 'admin', 0, '0');
+

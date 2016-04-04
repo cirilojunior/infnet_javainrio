@@ -28,12 +28,11 @@ public class InscricaoRepositoryJpa implements InscricaoRepository {
 		em.persist(entity);
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public List<Inscricao> listar() {
 		System.out.println("Listando inscricoes.");
 
-		CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+		CriteriaQuery<InscricaoEntity> cq = em.getCriteriaBuilder().createQuery(InscricaoEntity.class);
 		cq.select(cq.from(InscricaoEntity.class));
 		List<InscricaoEntity> entities = (List<InscricaoEntity>) em.createQuery(cq).getResultList();
 

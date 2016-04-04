@@ -3,6 +3,8 @@ package br.edu.infnet.javainrio.infrastructure.comum.dao;
 import java.io.Serializable;
 
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import br.edu.infnet.javainrio.domain.comum.Endereco;
 import br.edu.infnet.javainrio.domain.comum.Estado;
@@ -16,6 +18,7 @@ public class EnderecoEntity implements Serializable {
 	private String complemento;
 	private String bairro;
 	private String cidade;
+	@Enumerated(EnumType.STRING)
 	private Estado estado;
 	private String cep;
 
