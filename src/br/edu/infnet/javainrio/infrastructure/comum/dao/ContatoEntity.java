@@ -38,5 +38,9 @@ public class ContatoEntity implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public Contato toDomain() {
+		return new Contato(telefone, email);
+	}
 
 }

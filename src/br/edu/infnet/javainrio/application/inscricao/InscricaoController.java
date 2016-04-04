@@ -10,8 +10,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import br.edu.infnet.javainrio.domain.inscricao.Inscricao;
 import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
-import br.edu.infnet.javainrio.infrastructure.inscricao.dao.InscricaoRepositoryJpa;
 
 @ManagedBean(name = "inscricaoMB")
 @SessionScoped
@@ -22,18 +22,22 @@ public class InscricaoController implements Serializable {
 	private List<InscricaoDTO> lista = new ArrayList<>();
 	private InscricaoDTO inscricao;
 	private IngressoDTO ingresso;
-	private InscricaoRepository inscricaoRepository = new InscricaoRepositoryJpa();
+	@EJB
+	private InscricaoRepository inscricaoRepository;
 	@EJB
 	private InscricaoApplicationService inscricaoApplicationService;
 
-	public InscricaoController() {
-		buscarInscritos();
-	}
-
 	// Acoes e EventListeners
-	public void buscarInscritos() {
+	public String buscarInscritos() {
 		System.out.println("Buscando inscritos.");
-		lista = inscricaoRepository.listar();
+		lista = new ArrayList<>();
+		List<Inscricao> inscricoes = inscricaoRepository.listar();
+
+		for (Inscricao inscricao : inscricoes) {
+			lista.add(new InscricaoDTO(inscricao));
+		}
+
+		return "inscritos";
 	}
 
 	public String iniciarIncricao() {

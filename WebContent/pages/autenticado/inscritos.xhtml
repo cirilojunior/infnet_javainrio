@@ -8,7 +8,7 @@
 >  
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Listagem de Inscritos</title>
+<title>Java In Rio - Listagem de Inscritos</title>
 
 </h:head>
 <h:body>
@@ -16,7 +16,7 @@
     <p:growl id="msgs" showDetail="true" />
  
 	<p:dataTable id="tabela" var="item" value="#{inscricaoMB.lista}"
-		paginator="true" rows="50" emptyMessage="NÃ£o hÃ¡ registros na lista"
+		paginator="true" rows="50" emptyMessage="Não há registros na lista"
 		paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 		rowsPerPageTemplate="10,15,25,50,100">
 		<f:facet name="header">Lista de Inscritos</f:facet>
@@ -32,6 +32,9 @@
 			<h:outputText value="#{item.email}" />
 		</p:column>
 	</p:dataTable>
+
+   	<br></br>
+	<a href="main.xhtml">Voltar</a>
 
 </h:body>
 </html>

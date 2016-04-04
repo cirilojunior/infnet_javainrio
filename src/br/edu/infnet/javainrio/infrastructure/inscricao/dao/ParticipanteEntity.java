@@ -71,4 +71,8 @@ public class ParticipanteEntity {
 		this.senha = senha;
 	}
 
+	public Participante toDomain() {
+		return new Participante(nome, cpf, endereco.toDomain(), contato.toDomain(), senha);
+	}
+
 }

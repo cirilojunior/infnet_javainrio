@@ -13,12 +13,12 @@ import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteJaCadastradoException;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
-import br.edu.infnet.javainrio.infrastructure.inscricao.dao.ParticipanteRepositoryJpa;
 
 @Stateless
 public class InscricaoApplicationService {
 
-	private ParticipanteRepository participanteRepository = new ParticipanteRepositoryJpa();
+	@EJB
+	private ParticipanteRepository participanteRepository;
 	@EJB
 	private InscricaoRepository inscricaoRepository;
 

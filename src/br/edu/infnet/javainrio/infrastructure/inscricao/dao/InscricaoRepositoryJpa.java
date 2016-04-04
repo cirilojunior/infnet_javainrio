@@ -6,8 +6,8 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaQuery;
 
-import br.edu.infnet.javainrio.application.inscricao.InscricaoDTO;
 import br.edu.infnet.javainrio.domain.inscricao.Inscricao;
 import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
 
@@ -28,35 +28,20 @@ public class InscricaoRepositoryJpa implements InscricaoRepository {
 		em.persist(entity);
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public List<InscricaoDTO> listar() {
+	public List<Inscricao> listar() {
 		System.out.println("Listando inscricoes.");
-		ArrayList<InscricaoDTO> lInscricao = new ArrayList<InscricaoDTO>();
-		InscricaoDTO inscricao = new InscricaoDTO();
 
-		inscricao.setEmail("pedro@gmail.com");
-		inscricao.setNome("pedro");
-		inscricao.setCpf("12212222222");
+		CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+		cq.select(cq.from(InscricaoEntity.class));
+		List<InscricaoEntity> entities = (List<InscricaoEntity>) em.createQuery(cq).getResultList();
 
-		lInscricao.add(inscricao);
-
-		inscricao = new InscricaoDTO();
-
-		inscricao.setEmail("eduardo@gmail.com");
-		inscricao.setNome("eduardo");
-		inscricao.setCpf("121313131313");
-
-		lInscricao.add(inscricao);
-
-		inscricao = new InscricaoDTO();
-
-		inscricao.setEmail("cirilo@gmail.com");
-		inscricao.setNome("cirilo");
-		inscricao.setCpf("12212222222");
-
-		lInscricao.add(inscricao);
-
-		return lInscricao;
+		List<Inscricao> inscricoes = new ArrayList<>();
+		for (InscricaoEntity entity : entities) {
+			inscricoes.add(entity.toDomain());
+		}
+		return inscricoes;
 	}
 
 }

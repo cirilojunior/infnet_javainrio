@@ -90,4 +90,8 @@ public class EnderecoEntity implements Serializable {
 		this.cep = cep;
 	}
 
+	public Endereco toDomain() {
+		return new Endereco(logradouro, numero, complemento, bairro, cidade, estado, cep);
+	}
+
 }

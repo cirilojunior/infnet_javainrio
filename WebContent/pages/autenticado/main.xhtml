@@ -8,7 +8,7 @@
 >  
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Vídeos sobre Java</title>
+<title>Java In Rio - Vídeos sobre Java</title>
 
 </h:head>
 <h:body>
@@ -16,8 +16,8 @@
 
 Usuário logado: #{acessoMB.participante.nome}
 
-<h:form>
-  	<p:commandButton value="Lista de Inscritos" ajax="false" action="inscritos.xhtml" rendered="#{acessoMB.participante.admin}"></p:commandButton>
+<h:form id="areaExclusivaForm">
+  	<p:commandButton value="Lista de Inscritos" ajax="false" action="#{inscricaoMB.buscarInscritos}" rendered="#{acessoMB.participante.admin}"></p:commandButton>
 
     <p:growl id="msgs" showDetail="true" />
   
@@ -46,6 +46,9 @@ Usuário logado: #{acessoMB.participante.nome}
                 value="PROFISSÃO JAVA: A PROFISSÃO DO FUTURO!" />
         </h:panelGrid>
     </p:panel>
+    
+   	<br></br>
+	<a href="index.xhtml">Voltar</a>
 
 </h:form>	
 </h:body>

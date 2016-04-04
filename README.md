@@ -8,6 +8,9 @@ Características para o escopo do trabalho:
 - Como não será utilizada nenhuma ferramenta de build e dependência (tipo Maven) e será feito
 no Eclipse por todos do grupo, os arquivos de configuração do projeto na IDE também foram
 versionados. Isso será evoluido posteriormente.
+- Caminho do script de criação de banco: database_scripts\create_database.sql
+- Datasource: java:/jboss/jdbc/JavaInRio
+
 
 Roadmap:
 - Log (SLF4J)

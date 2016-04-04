@@ -3,12 +3,15 @@ package br.edu.infnet.javainrio.infrastructure.inscricao.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
 
 /**
  * Repositorio de Participantes com JPA.
  */
+@Stateless
 public class ParticipanteRepositoryJpa implements ParticipanteRepository {
 
 	private static List<Participante> participantes = new ArrayList<>();

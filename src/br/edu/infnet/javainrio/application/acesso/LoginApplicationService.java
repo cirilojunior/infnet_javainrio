@@ -1,17 +1,18 @@
 package br.edu.infnet.javainrio.application.acesso;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import org.apache.commons.lang3.StringUtils;
 
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
-import br.edu.infnet.javainrio.infrastructure.inscricao.dao.ParticipanteRepositoryJpa;
 
 @Stateless
 public class LoginApplicationService {
 
-	private ParticipanteRepository participanteRepository = new ParticipanteRepositoryJpa();
+	@EJB
+	private ParticipanteRepository participanteRepository;
 
 	public ParticipanteDTO login(String login, String senha) {
 

@@ -8,6 +8,7 @@ import br.edu.infnet.javainrio.domain.comum.Endereco;
 import br.edu.infnet.javainrio.domain.comum.Estado;
 import br.edu.infnet.javainrio.domain.inscricao.AreaInteresse;
 import br.edu.infnet.javainrio.domain.inscricao.DiasEvento;
+import br.edu.infnet.javainrio.domain.inscricao.Inscricao;
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.pagamento.Pagamento;
 
@@ -16,7 +17,6 @@ public class InscricaoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	// Participante
-	private String codigo;
 	private String nome;
 	private String cpf;
 	private String senha;
@@ -39,12 +39,26 @@ public class InscricaoDTO implements Serializable {
 	private List<DiasEvento> diasSelecionados;
 	private Pagamento.BandeiraCartao bandeiraCartao;
 
-	public String getCodigo() {
-		return codigo;
+	public InscricaoDTO() {
+		super();
 	}
 
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public InscricaoDTO(Inscricao inscricao) {
+		this();
+		this.nome = inscricao.getParticipante().getNome();
+		this.cpf = inscricao.getParticipante().getCpf();
+
+		this.telefone = inscricao.getParticipante().getContato().getTelefone();
+		this.email = inscricao.getParticipante().getContato().getEmail();
+
+		this.logradouro = inscricao.getParticipante().getEndereco().getLogradouro();
+		this.numero = inscricao.getParticipante().getEndereco().getNumero();
+		this.complemento = inscricao.getParticipante().getEndereco().getComplemento();
+		this.bairro = inscricao.getParticipante().getEndereco().getBairro();
+		this.cidade = inscricao.getParticipante().getEndereco().getCidade();
+		this.estado = inscricao.getParticipante().getEndereco().getEstado().toString();
+		this.cep = inscricao.getParticipante().getEndereco().getCep();
+
 	}
 
 	public String getNome() {
