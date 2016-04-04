@@ -1,20 +1,23 @@
 package br.edu.infnet.javainrio.domain.comum;
 
-public class Contato {
+import java.io.Serializable;
 
-    private String telefone;
-    private String email;
+public class Contato implements Serializable {
 
-    public Contato(String telefone, String email) {
-        this.telefone = telefone;
-        this.email = email;
-    }
+	private static final long serialVersionUID = 1L;
+	private String telefone;
+	private String email;
 
-    public String getTelefone() {
-        return telefone;
-    }
+	public Contato(String telefone, String email) {
+		this.telefone = telefone;
+		this.email = email;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
 }

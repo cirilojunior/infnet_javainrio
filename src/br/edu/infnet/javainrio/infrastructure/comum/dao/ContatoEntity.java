@@ -4,12 +4,24 @@ import java.io.Serializable;
 
 import javax.persistence.Embeddable;
 
+import br.edu.infnet.javainrio.domain.comum.Contato;
+
 @Embeddable
 public class ContatoEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String telefone;
 	private String email;
+
+	public ContatoEntity() {
+		super();
+	}
+
+	public ContatoEntity(Contato contato) {
+		this();
+		this.telefone = contato.getTelefone();
+		this.email = contato.getEmail();
+	}
 
 	public String getTelefone() {
 		return telefone;

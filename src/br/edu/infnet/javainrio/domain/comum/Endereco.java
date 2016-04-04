@@ -1,50 +1,54 @@
 package br.edu.infnet.javainrio.domain.comum;
 
-public class Endereco {
+import java.io.Serializable;
 
-    private String logradouro;
-    private String numero;
-    private String complemento;
-    private String bairro;
-    private String cidade;
-    private Estado estado;
-    private String cep;
+public class Endereco implements Serializable {
 
-    public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, Estado estado, String cep) {
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.cep = cep;
-    }
+	private static final long serialVersionUID = 1L;
+	private String logradouro;
+	private String numero;
+	private String complemento;
+	private String bairro;
+	private String cidade;
+	private Estado estado;
+	private String cep;
 
-    public String getLogradouro() {
-        return logradouro;
-    }
+	public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, Estado estado,
+			String cep) {
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.cep = cep;
+	}
 
-    public String getNumero() {
-        return numero;
-    }
+	public String getLogradouro() {
+		return logradouro;
+	}
 
-    public String getComplemento() {
-        return complemento;
-    }
+	public String getNumero() {
+		return numero;
+	}
 
-    public String getBairro() {
-        return bairro;
-    }
+	public String getComplemento() {
+		return complemento;
+	}
 
-    public String getCidade() {
-        return cidade;
-    }
+	public String getBairro() {
+		return bairro;
+	}
 
-    public Estado getEstado() {
-        return estado;
-    }
+	public String getCidade() {
+		return cidade;
+	}
 
-    public String getCep() {
-        return cep;
-    }
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public String getCep() {
+		return cep;
+	}
 }

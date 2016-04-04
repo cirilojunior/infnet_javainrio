@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Embeddable;
 
+import br.edu.infnet.javainrio.domain.comum.Endereco;
 import br.edu.infnet.javainrio.domain.comum.Estado;
 
 @Embeddable
@@ -17,6 +18,21 @@ public class EnderecoEntity implements Serializable {
 	private String cidade;
 	private Estado estado;
 	private String cep;
+
+	public EnderecoEntity() {
+		super();
+	}
+
+	public EnderecoEntity(Endereco endereco) {
+		this();
+		this.logradouro = endereco.getLogradouro();
+		this.numero = endereco.getNumero();
+		this.complemento = endereco.getComplemento();
+		this.bairro = endereco.getBairro();
+		this.cidade = endereco.getCidade();
+		this.estado = endereco.getEstado();
+		this.cep = endereco.getCep();
+	}
 
 	public String getLogradouro() {
 		return logradouro;

@@ -1,11 +1,13 @@
 package br.edu.infnet.javainrio.domain.inscricao;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class Inscricao {
+public class Inscricao implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Participante participante;
 	private Integer anoEdicao;
 	private LocalDate data;

@@ -1,12 +1,14 @@
 package br.edu.infnet.javainrio.domain.edicao;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import br.edu.infnet.javainrio.domain.comum.Contato;
 import br.edu.infnet.javainrio.domain.comum.Endereco;
 
-public class Edicao {
+public class Edicao implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Integer ano;
 	private LocalDate dataInicio;
 	private LocalDate dataFim;
@@ -90,5 +92,5 @@ public class Edicao {
 			return false;
 		return true;
 	}
-	
+
 }

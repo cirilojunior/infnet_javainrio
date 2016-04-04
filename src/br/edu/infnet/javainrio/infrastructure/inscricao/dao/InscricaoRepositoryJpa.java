@@ -3,6 +3,7 @@ package br.edu.infnet.javainrio.infrastructure.inscricao.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -13,14 +14,18 @@ import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
 /**
  * Repositorio de Inscricoes com JPA.
  */
+@Stateless
 public class InscricaoRepositoryJpa implements InscricaoRepository {
 
-	@PersistenceContext
+	@PersistenceContext(name = "javainrio")
 	private EntityManager em;
 
 	@Override
 	public void confirmar(Inscricao inscricao) {
 		System.out.println("Confirmando inscricao.");
+
+		InscricaoEntity entity = new InscricaoEntity(inscricao);
+		em.persist(entity);
 	}
 
 	@Override

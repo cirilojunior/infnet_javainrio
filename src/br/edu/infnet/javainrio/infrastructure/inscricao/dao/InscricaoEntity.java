@@ -2,6 +2,7 @@ package br.edu.infnet.javainrio.infrastructure.inscricao.dao;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.ZoneId;
 import java.util.Date;
 
 import javax.persistence.Embedded;
@@ -11,7 +12,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import br.edu.infnet.javainrio.domain.inscricao.Inscricao;
+
 @Entity
+//@Table(schema = "infnet_java_javainrio", name = "inscricao")
 @Table(name = "inscricao")
 public class InscricaoEntity implements Serializable {
 
@@ -24,6 +28,19 @@ public class InscricaoEntity implements Serializable {
 	private BigDecimal valorPago;
 	@Id
 	private String codigoIngresso;
+
+	public InscricaoEntity() {
+		super();
+	}
+
+	public InscricaoEntity(Inscricao inscricao) {
+		this();
+		this.participante = new ParticipanteEntity(inscricao.getParticipante());
+		this.anoEdicao = inscricao.getAnoEdicao();
+		this.data = Date.from(inscricao.getData().atStartOfDay(ZoneId.systemDefault()).toInstant());
+		this.valorPago = inscricao.getValorPago();
+		this.codigoIngresso = inscricao.getCodigoIngresso();
+	}
 
 	public ParticipanteEntity getParticipante() {
 		return participante;

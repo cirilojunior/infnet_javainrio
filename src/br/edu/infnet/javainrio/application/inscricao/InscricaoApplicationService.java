@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import br.edu.infnet.javainrio.domain.comum.Constantes;
@@ -12,14 +13,14 @@ import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
 import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteJaCadastradoException;
 import br.edu.infnet.javainrio.domain.inscricao.ParticipanteRepository;
-import br.edu.infnet.javainrio.infrastructure.inscricao.dao.InscricaoRepositoryJpa;
 import br.edu.infnet.javainrio.infrastructure.inscricao.dao.ParticipanteRepositoryJpa;
 
 @Stateless
 public class InscricaoApplicationService {
 
 	private ParticipanteRepository participanteRepository = new ParticipanteRepositoryJpa();
-	private InscricaoRepository inscricaoRepository = new InscricaoRepositoryJpa();
+	@EJB
+	private InscricaoRepository inscricaoRepository;
 
 	public IngressoDTO efetuar(InscricaoDTO dto) {
 
@@ -30,11 +31,11 @@ public class InscricaoApplicationService {
 		BigDecimal valorPagamento = dto.toPagamento().calcularTotal(valorPorDiaDoEvento);
 
 		Participante participante = dto.toParticipante();
-		
-		if(participanteRepository.buscar(participante.getCpf()) != null) {
+
+		if (participanteRepository.buscar(participante.getCpf()) != null) {
 			throw new ParticipanteJaCadastradoException();
 		}
-		
+
 		Participante participanteGravado = participanteRepository.salvar(participante);
 
 		Inscricao inscricao = new Inscricao(participanteGravado, anoEdicao, hoje, valorPagamento);

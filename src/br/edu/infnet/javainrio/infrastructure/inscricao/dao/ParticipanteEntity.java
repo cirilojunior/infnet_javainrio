@@ -3,6 +3,7 @@ package br.edu.infnet.javainrio.infrastructure.inscricao.dao;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 
+import br.edu.infnet.javainrio.domain.inscricao.Participante;
 import br.edu.infnet.javainrio.infrastructure.comum.dao.ContatoEntity;
 import br.edu.infnet.javainrio.infrastructure.comum.dao.EnderecoEntity;
 
@@ -16,6 +17,19 @@ public class ParticipanteEntity {
 	@Embedded
 	private ContatoEntity contato;
 	private String senha;
+
+	public ParticipanteEntity() {
+		super();
+	}
+
+	public ParticipanteEntity(Participante participante) {
+		this();
+		this.nome = participante.getNome();
+		this.cpf = participante.getCpf();
+		this.endereco = new EnderecoEntity(participante.getEndereco());
+		this.contato = new ContatoEntity(participante.getContato());
+		this.senha = participante.getSenha();
+	}
 
 	public String getNome() {
 		return nome;

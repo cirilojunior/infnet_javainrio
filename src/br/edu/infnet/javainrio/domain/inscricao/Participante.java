@@ -1,10 +1,13 @@
 package br.edu.infnet.javainrio.domain.inscricao;
 
+import java.io.Serializable;
+
 import br.edu.infnet.javainrio.domain.comum.Contato;
 import br.edu.infnet.javainrio.domain.comum.Endereco;
 
-public class Participante {
+public class Participante implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String cpf;
 	private Endereco endereco;
