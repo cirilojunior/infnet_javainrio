@@ -3,6 +3,7 @@ package br.edu.infnet.javainrio.infrastructure.inscricao.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,6 +16,7 @@ import br.edu.infnet.javainrio.domain.inscricao.InscricaoRepository;
  * Repositorio de Inscricoes com JPA.
  */
 @Stateless
+@Remote(InscricaoRepository.class)
 public class InscricaoRepositoryJpa implements InscricaoRepository {
 
 	@PersistenceContext(name = "javainrio")
